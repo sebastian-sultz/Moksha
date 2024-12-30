@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const AuthRouter = require('./Routes/AuthRouter');
 const ProductRouter = require('./Routes/ProductRouter');
+const path = require("path");
 
 require('dotenv').config();
 require('./Models/db');
@@ -12,6 +13,10 @@ const PORT = process.env.PORT || 8080;
 app.get('/ping', (req, res) => {
     res.send('PONG');
 });
+
+const _dirname=path.dirname("")
+const buildpath = path.join(_dirname,"../frontend/dist")
+app.use(express.static(buildpath));
 
 app.use(bodyParser.json());
 app.use(cors());
