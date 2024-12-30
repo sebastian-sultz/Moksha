@@ -5,7 +5,7 @@ const cors = require('cors');
 const AuthRouter = require('./Routes/AuthRouter');
 const ProductRouter = require('./Routes/ProductRouter');
 const path = require("path");
-const a = 10;
+
 require('dotenv').config();
 require('./Models/db');
 const PORT = process.env.PORT || 8080;
